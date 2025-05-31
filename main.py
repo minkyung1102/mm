@@ -1,4 +1,4 @@
-   import streamlit as st
+import streamlit as st
 
 st.title("MBTI별 공부법 추천")
 
