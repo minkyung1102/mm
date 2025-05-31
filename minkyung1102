@@ -1,0 +1,35 @@
+import streamlit as st
+
+st.title("MBTI별 추천 취미생활")
+
+mbti_types = [
+    "ISTJ", "ISFJ", "INFJ", "INTJ",
+    "ISTP", "ISFP", "INFP", "INTP",
+    "ESTP", "ESFP", "ENFP", "ENTP",
+    "ESTJ", "ESFJ", "ENFJ", "ENTJ"
+]
+
+hobby_suggestions = {
+    "ISTJ": "정리나 수집 취미, 독서, DIY 키트 조립",
+    "ISFJ": "베이킹, 스크랩북 만들기, 식물 키우기",
+    "INFJ": "글쓰기, 명상, 철학 책 읽기",
+    "INTJ": "코딩, 전략 게임, 퍼즐 맞추기",
+    "ISTP": "자동차·기계 관련 DIY, 낚시, 캠핑",
+    "ISFP": "사진 찍기, 그림 그리기, 인테리어 꾸미기",
+    "INFP": "일기 쓰기, 시 창작, 감성 음악 감상",
+    "INTP": "보드게임, 과학 다큐 보기, 수학 문제 풀이",
+    "ESTP": "액티비티 스포츠, 오토바이 여행, 게임 스트리밍",
+    "ESFP": "춤추기, 연기, 친구들과 여행",
+    "ENFP": "즉흥 여행, 브이로그 촬영, 다양한 소셜 활동",
+    "ENTP": "디베이트, 창업 아이디어 기획, 유튜브 만들기",
+    "ESTJ": "헬스, 생산성 앱 분석, 시간 관리 취미",
+    "ESFJ": "홈파티 기획, 플래너 꾸미기, 요리",
+    "ENFJ": "멘토링, 자기계발 스터디, 커뮤니티 활동",
+    "ENTJ": "전략 보드게임, 리더십 코스, 재테크 공부"
+}
+
+selected_mbti = st.selectbox("당신의 MBTI를 선택하세요", mbti_types)
+
+if selected_mbti:
+    st.subheader(f"{selected_mbti} 유형에게 추천하는 취미는?")
+    st.write(f"🎨 {hobby_suggestions[selected_mbti]}")
